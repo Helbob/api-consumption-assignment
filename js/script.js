@@ -3,11 +3,10 @@
 import { apiKeyOpenWeather } from "./info.js";
 
 const urlOpenWeather = "https://api.openweathermap.org/";
+let cityName = "Copenhagen";
 
 const queryOpenWeather = (query) => {
-  const endpointOpenWeather = `${urlOpenWeather}data/2.5/weather?q=${query}&appid=${apiKeyOpenWeather}`;
-  console.log(endpointOpenWeather);
-
+  const endpointOpenWeather = `${urlOpenWeather}data/2.5/weather?q=${cityName}&appid=${apiKeyOpenWeather}`;
   fetch(endpointOpenWeather, {
     headers: {
       Authorization: `Bearer ${apiKeyOpenWeather}`,
@@ -17,3 +16,5 @@ const queryOpenWeather = (query) => {
     .then((data) => showFilms(JSON.parse(data)))
     .catch((error) => console.log("error", error));
 };
+
+queryOpenWeather();
