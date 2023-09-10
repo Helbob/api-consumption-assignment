@@ -66,6 +66,7 @@ function displayTicketMaster(event) {
   } else {
     htmlTicket += `
         <h2><span>Event: </span>${event._embedded.events[0].name}</h2>
+         <h2><span>Event: </span>${event._embedded.events[0].dates.start.localDate}</h2>
         `;
 
     document.querySelector("#display_ticket").innerHTML = htmlTicket;
