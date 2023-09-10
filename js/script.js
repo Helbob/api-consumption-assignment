@@ -50,9 +50,9 @@ dataBtn.addEventListener("click", function (e) {
 function displayWeather(data) {
   let htmlWeather = "";
   htmlWeather += `
-        <h2><span>City: </span>${data.name}</h2>
-        <h2><span>Temp: </span>${data.main.temp} °C</h2>
-        <h2><span>Feels like: </span>${data.main.feels_like} °C</h2>
+        <h1><span>City: </span>${data.name}</h1>
+        <p><span>Temp: </span>${data.main.temp} °C</p>
+        <p><span>Feels like: </span>${data.main.feels_like} °C</p>
         `;
 
   document.querySelector("#display_weather").innerHTML = htmlWeather;
@@ -65,7 +65,7 @@ function displayTicketMaster(event) {
     document.querySelector("#display_ticket").innerHTML = htmlTicket;
   } else {
     htmlTicket += `
-        <h2><span>Test: </span>${event._embedded.events[0].name}</h2>
+        <h2><span>Event: </span>${event._embedded.events[0].name}</h2>
         `;
 
     document.querySelector("#display_ticket").innerHTML = htmlTicket;
