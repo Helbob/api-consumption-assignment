@@ -50,9 +50,9 @@ dataBtn.addEventListener("click", function (e) {
 function displayWeather(data) {
   let htmlWeather = "";
   htmlWeather += `
-        <h3><span>City: </span>${data.name}</h3>
-        <p><span>Temp: </span>${data.main.temp} °C</p>
-        <p><span>Feels like: </span>${data.main.feels_like} °C</p>
+        <h3><span> </span>${data.name}</h3>
+        <p><span><strong>Temp: </strong> </span>${data.main.temp} °C</p>
+        <p><span><strong>Feels like: </strong></span>${data.main.feels_like} °C</p>
         `;
 
   document.querySelector("#display_weather").innerHTML = htmlWeather;
@@ -84,9 +84,9 @@ const showEvents = (event) => {
     event._embedded.events.forEach((item) => {
       htmlTicket += `
         <article class="test">
-        <p>${item.name}</p>
-        <p><span>Date: </span>${item.dates.start.localDate}</p>
-        <p><span>Time: </span>${item.dates.start.localTime}</p>
+        <p><strong>${item.name}</strong></p>
+        <p><span><strong>Date: </strong></span>${item.dates.start.localDate}</p>
+        <p><span><strong>Time: </strong></span>${item.dates.start.localTime}</p>
         </article>
         `;
 
