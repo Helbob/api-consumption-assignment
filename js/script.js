@@ -55,7 +55,7 @@ function displayWeather(data) {
         <h2><span>Feels like: </span>${data.main.feels_like} °C</h2>
         `;
 
-  document.querySelector("#display_data").innerHTML = html;
+  document.querySelector("#display_weather").innerHTML = html;
 }
 
 function displayTicketMaster(event) {
@@ -68,6 +68,6 @@ function displayTicketMaster(event) {
         <h2><span>Test: </span>${event._embedded.events[0].name}</h2>
         `;
 
-    document.querySelector("#display_datatwo").innerHTML = htmltwo;
+    document.querySelector("#display_ticket").innerHTML = htmltwo;
   }
 }
