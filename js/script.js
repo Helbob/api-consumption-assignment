@@ -29,7 +29,7 @@ dataBtn.addEventListener("click", function (e) {
       .catch((error) => console.error("FETCH ERROR:", error));
 
     fetch(
-      `https://app.ticketmaster.com/discovery/v2/events.json?size=1&city=${cityName}&apikey=${apiKeyTicketMaster}`,
+      `https://app.ticketmaster.com/discovery/v2/events?apikey=${apiKeyTicketMaster}&locale=*&city=${cityName}`,
       options
     )
       .then((response) => {
@@ -83,6 +83,7 @@ const showEvents = (event) => {
   } else {
     event._embedded.events.forEach((item) => {
       htmlTicket += `
+        <h2><span>name: </span>${item.name}</h2>
         <h2><span>Event: </span>${item.dates.start.localDate}</h2>
         <h2><span>Event: </span>${item.dates.start.localTime}</h2>
         `;
