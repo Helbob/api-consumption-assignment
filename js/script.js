@@ -41,7 +41,7 @@ dataBtn.addEventListener("click", function (e) {
       })
       .then((event) => {
         console.log(event);
-        displayTicketMaster(event);
+        showEvents(event);
       })
       .catch((error) => console.error("FETCH ERROR:", error));
   }
@@ -58,7 +58,7 @@ function displayWeather(data) {
   document.querySelector("#display_weather").innerHTML = htmlWeather;
 }
 
-function displayTicketMaster(event) {
+/* function displayTicketMaster(event) {
   let htmlTicket = "";
   if (event.page.totalElements === 0) {
     console.log("No events");
@@ -66,11 +66,28 @@ function displayTicketMaster(event) {
   } else {
     htmlTicket += `
         <h2><span>Event: </span>${event._embedded.events[0].name}</h2>
-         <p><span></span>${event._embedded.events[0].dates.start.localDate} <br> At ${event._embedded.events[0].dates.start.localTime}</p>
+        <h2><span>asd: </span>${event._embedded.venues}</h2>
+        <p><span></span>${event._embedded.events[0].dates.start.localDate} <br> At ${event._embedded.events[0].dates.start.localTime}</p>
         `;
 
     document.querySelector("#display_ticket").innerHTML = htmlTicket;
   }
-}
+} */
 
 // i need a foreach
+
+const showEvents = (event) => {
+  let htmlTicket = "";
+  if (event.page.totalElements === 0) {
+    document.querySelector("#display_ticket").innerHTML = htmlTicket;
+  } else {
+    event._embedded.events.forEach((item) => {
+      htmlTicket += `
+        <h2><span>Event: </span>${item.dates.start.localDate}</h2>
+        <h2><span>Event: </span>${item.dates.start.localTime}</h2>
+        `;
+
+      document.querySelector("#display_ticket").innerHTML = htmlTicket;
+    });
+  }
+};
