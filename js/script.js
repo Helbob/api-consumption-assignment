@@ -83,9 +83,9 @@ const showEvents = (event) => {
   } else {
     event._embedded.events.forEach((item) => {
       htmlTicket += `
-        <h2><span>name: </span>${item.name}</h2>
-        <h2><span>Event: </span>${item.dates.start.localDate}</h2>
-        <h2><span>Event: </span>${item.dates.start.localTime}</h2>
+        <h2><span>Name: </span>${item.name}</h2>
+        <p><span>Date: </span>${item.dates.start.localDate}</p>
+        <p><span>Time: </span>${item.dates.start.localTime}</p>
         `;
 
       document.querySelector("#display_ticket").innerHTML = htmlTicket;
