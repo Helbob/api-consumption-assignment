@@ -72,3 +72,5 @@ function displayTicketMaster(event) {
     document.querySelector("#display_ticket").innerHTML = htmlTicket;
   }
 }
+
+// i need a foreach
