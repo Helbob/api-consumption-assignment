@@ -60,9 +60,14 @@ function displayWeather(data) {
 
 function displayTicketMaster(event) {
   let htmltwo = "";
-  htmltwo += `
+  if (event.page.totalElements === 0) {
+    console.log("No events");
+    document.querySelector("#display_datatwo").innerHTML = htmltwo;
+  } else {
+    htmltwo += `
         <h2><span>Test: </span>${event._embedded.events[0].name}</h2>
         `;
 
-  document.querySelector("#display_datatwo").innerHTML = htmltwo;
+    document.querySelector("#display_datatwo").innerHTML = htmltwo;
+  }
 }
