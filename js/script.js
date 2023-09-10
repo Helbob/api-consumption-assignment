@@ -48,26 +48,26 @@ dataBtn.addEventListener("click", function (e) {
 });
 
 function displayWeather(data) {
-  let html = "";
-  html += `
+  let htmlWeather = "";
+  htmlWeather += `
         <h2><span>City: </span>${data.name}</h2>
         <h2><span>Temp: </span>${data.main.temp} °C</h2>
         <h2><span>Feels like: </span>${data.main.feels_like} °C</h2>
         `;
 
-  document.querySelector("#display_weather").innerHTML = html;
+  document.querySelector("#display_weather").innerHTML = htmlWeather;
 }
 
 function displayTicketMaster(event) {
-  let htmltwo = "";
+  let htmlTicket = "";
   if (event.page.totalElements === 0) {
     console.log("No events");
-    document.querySelector("#display_ticket").innerHTML = htmltwo;
+    document.querySelector("#display_ticket").innerHTML = htmlTicket;
   } else {
-    htmltwo += `
+    htmlTicket += `
         <h2><span>Test: </span>${event._embedded.events[0].name}</h2>
         `;
 
-    document.querySelector("#display_ticket").innerHTML = htmltwo;
+    document.querySelector("#display_ticket").innerHTML = htmlTicket;
   }
 }
