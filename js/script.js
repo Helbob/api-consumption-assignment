@@ -9,7 +9,7 @@ dataBtn.addEventListener("click", function (e) {
   let cityName = document.querySelector("#cityName").value;
   e.preventDefault();
   if (cityName == "") {
-    console.log("Enter cityname");
+    alert("Please enter cityname");
   } else {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKeyOpenWeather}`,
@@ -50,7 +50,7 @@ dataBtn.addEventListener("click", function (e) {
 function displayWeather(data) {
   let htmlWeather = "";
   htmlWeather += `
-        <h1><span>City: </span>${data.name}</h1>
+        <h3><span>City: </span>${data.name}</h3>
         <p><span>Temp: </span>${data.main.temp} °C</p>
         <p><span>Feels like: </span>${data.main.feels_like} °C</p>
         `;
@@ -83,9 +83,11 @@ const showEvents = (event) => {
   } else {
     event._embedded.events.forEach((item) => {
       htmlTicket += `
-        <h2><span>Name: </span>${item.name}</h2>
+        <article class="test">
+        <p>${item.name}</p>
         <p><span>Date: </span>${item.dates.start.localDate}</p>
         <p><span>Time: </span>${item.dates.start.localTime}</p>
+        </article>
         `;
 
       document.querySelector("#display_ticket").innerHTML = htmlTicket;

@@ -1,0 +1,56 @@
+:root {
+  --mainFont: Sans-serif;
+  --btnBg: #939fc9;
+  --btnBgHover: #7a83a5;
+}
+
+.test {
+  border: 1px black solid;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.left {
+  padding-left: 1rem;
+}
+
+#display_weather {
+  border: 1px black solid;
+  margin: 1rem;
+  padding-left: 1rem;
+}
+
+body {
+  font-family: var(--mainFont);
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#weather-data {
+  padding: 0.3rem;
+  margin: 1rem;
+  width: 10rem;
+  background-color: var(--btnBg);
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+#weather-data:hover {
+  padding: 0.3rem;
+  margin: 1rem;
+  width: 10rem;
+  background-color: var(--btnBgHover);
+  border: none;
+  border-radius: 2rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
